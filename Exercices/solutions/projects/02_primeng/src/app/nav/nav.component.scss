@@ -1,0 +1,12 @@
+.app-nav {
+  h3 {
+    margin: 0;
+    padding: 0.75rem 1rem 0.125rem 1rem;
+  }
+
+  .p-menu-item-link-active {
+    border-radius: var(--p-menu-item-border-radius);
+    background-color: var(--p-button-primary-active-background);
+    color: var(--p-button-primary-color);
+  }
+}

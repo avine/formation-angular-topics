@@ -1,0 +1,52 @@
+.app-root {
+  margin-inline: auto;
+  max-width: 960px;
+  min-height: 100%;
+
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: max-content minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 'header header' 'sidenav main' 'footer footer';
+
+  box-sizing: border-box;
+  padding: 1.5rem;
+
+  &__header {
+    grid-area: header;
+
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      margin: 0;
+    }
+    a {
+      --p-icon-size: 0.85em;
+
+      text-decoration: none;
+      color: var(--p-primary-color);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    text-align: right;
+  }
+
+  &__sidenav {
+    grid-area: sidenav;
+  }
+
+  &__main {
+    grid-area: main;
+  }
+
+  &__footer {
+    grid-area: footer;
+    text-align: center;
+  }
+}

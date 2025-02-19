@@ -1,0 +1,14 @@
+@import '../../../node_modules/@fontsource/nunito/400.css';
+@import '../../../node_modules/@fontsource/nunito/700.css';
+
+@import 'primeicons/primeicons.css';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito';
+}

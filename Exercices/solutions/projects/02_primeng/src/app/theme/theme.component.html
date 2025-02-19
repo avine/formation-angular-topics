@@ -1,0 +1,4 @@
+<p-button
+  [icon]="themeService.theme() === 'light' ? 'pi pi-moon' : 'pi pi-sun'"
+  (onClick)="themeService.switchTheme()"
+/>

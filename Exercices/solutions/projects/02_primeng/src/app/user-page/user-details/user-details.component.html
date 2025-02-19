@@ -1,0 +1,13 @@
+@let _user = user();
+
+<div>
+  <i class="pi pi-id-card" style="margin-right: 0.25rem"></i> Username: <strong>{{ _user.username }}</strong>
+</div>
+
+<div>
+  <i class="pi pi-at" style="margin-right: 0.25rem"></i> E-mail: <strong>{{ _user.email }}</strong>
+</div>
+
+<div>
+  <i class="pi pi-map-marker" style="margin-right: 0.25rem"></i> City: <strong>{{ _user.address.city }}</strong>
+</div>

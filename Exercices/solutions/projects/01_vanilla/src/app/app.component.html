@@ -1,0 +1,17 @@
+<header class="app-root__header">
+  <h1>
+    <a routerLink="/">User posts</a>
+  </h1>
+
+  <div class="app-root__actions">
+    <div>{{ now | date }}</div>
+  </div>
+</header>
+
+<app-nav class="app-root__sidenav" />
+
+<main class="app-root__main">
+  <router-outlet />
+</main>
+
+<footer class="app-root__footer">Copyright &copy; Zenika</footer>

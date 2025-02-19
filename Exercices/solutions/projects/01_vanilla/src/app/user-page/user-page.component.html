@@ -1,0 +1,19 @@
+@if (userService.user(); as user) {
+  <h2>User</h2>
+  <app-user-details [user]="user" />
+}
+
+<h2>Posts</h2>
+<ul>
+  @for (post of posts(); track post.id) {
+    <li>
+      <button (click)="selectedPostId.set(post.id)">{{ post.title }}</button>
+    </li>
+  }
+</ul>
+
+@if (selectedPost(); as post) {
+  <h2>{{ post.title }}</h2>
+  <p>{{ post.body }}</p>
+  <button (click)="selectedPostId.set(undefined)">Close</button>
+}

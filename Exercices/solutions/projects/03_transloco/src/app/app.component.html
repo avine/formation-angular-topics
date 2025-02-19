@@ -1,0 +1,29 @@
+<ng-container *transloco="let t">
+  <header class="app-root__header">
+    <h1>
+      <a routerLink="/">
+        <i class="pi pi-bookmark"></i>
+
+        {{ t('appTitle') }}
+      </a>
+    </h1>
+
+    <div class="app-root__actions">
+      <div>
+        <i class="pi pi-clock" style="margin-right: 0.25rem"></i> {{ now | translocoDate: { dateStyle: 'medium' } }}
+      </div>
+
+      <app-select-lang />
+
+      <app-theme />
+    </div>
+  </header>
+
+  <app-nav class="app-root__sidenav" />
+
+  <main class="app-root__main">
+    <router-outlet />
+  </main>
+
+  <footer class="app-root__footer">{{ t('copyright') }} &copy; Zenika</footer>
+</ng-container>
