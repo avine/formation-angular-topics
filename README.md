@@ -1,4 +1,4 @@
-# Formation Angular - topics
+# Angular topics
 
 - NgRx
 - PrimeNG
