@@ -1,0 +1,18 @@
+@let _user = user();
+
+<ng-container *transloco="let t">
+  <div>
+    <i class="pi pi-id-card" style="margin-right: 0.5rem"></i>
+    {{ t('username') }}: <strong>{{ _user.username }}</strong>
+  </div>
+
+  <div>
+    <i class="pi pi-at" style="margin-right: 0.5rem"></i>
+    {{ t('email') }}: <strong>{{ _user.email }}</strong>
+  </div>
+
+  <div>
+    <i class="pi pi-map-marker" style="margin-right: 0.5rem"></i>
+    {{ t('city') }}: <strong>{{ _user.address.city }}</strong>
+  </div>
+</ng-container>
