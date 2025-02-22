@@ -1,21 +1,21 @@
-@if (userService.user(); as user) {
-  <p-card [header]="user.name">
-    <app-user-details [user]="user" />
+@if (user(); as _user) {
+  <p-card [header]="_user.name">
+    <app-user-details [user]="_user" />
   </p-card>
 }
 
 <h2 style="margin-bottom: 0">Posts</h2>
-@for (post of posts(); track post.id) {
+@for (post of userPostsService.posts(); track post.id) {
   <p-button
     icon="pi pi-angle-right"
     [label]="post.title"
     [link]="true"
     [style]="{ textAlign: 'left' }"
-    (onClick)="selectedPostId.set(post.id)"
+    (onClick)="userPostsService.selectedPostId.set(post.id)"
   /><br />
 }
 
-@let post = selectedPost();
+@let post = userPostsService.selectedPost();
 <p-dialog
   [style]="{ width: '480px', maxWidth: '80%' }"
   [modal]="true"
@@ -23,7 +23,7 @@
   [draggable]="false"
   [dismissableMask]="true"
   [visible]="post !== undefined"
-  (visibleChange)="selectedPostId.set(undefined)"
+  (visibleChange)="userPostsService.selectedPostId.set(undefined)"
   [header]="post?.title"
 >
   {{ post?.body }}

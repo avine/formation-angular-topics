@@ -1,5 +1,5 @@
 import { Component, input, ViewEncapsulation } from '@angular/core';
-import { User } from '../../shared/api';
+import { User } from '../../shared/api/api.types';
 
 @Component({
   selector: 'app-user-details',

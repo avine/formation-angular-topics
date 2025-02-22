@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { UserPostsService } from './shared/user-posts.service';
 import { UserPageComponent } from './user-page/user-page.component';
-import { userPageGuard } from './user-page/user-page.guard';
+import { userPageResolver } from './user-page/user-page.resolver';
 
 export const routes: Routes = [
   {
@@ -11,6 +12,7 @@ export const routes: Routes = [
   {
     path: 'user/:userId',
     component: UserPageComponent,
-    canActivate: [userPageGuard],
+    resolve: { user: userPageResolver },
+    providers: [UserPostsService],
   },
 ];

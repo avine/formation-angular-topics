@@ -1,6 +1,6 @@
-@if (userStore.user(); as user) {
-  <p-card [header]="user.name">
-    <app-user-details [user]="user" />
+@if (user(); as _user) {
+  <p-card [header]="_user.name">
+    <app-user-details [user]="_user" />
   </p-card>
 }
 

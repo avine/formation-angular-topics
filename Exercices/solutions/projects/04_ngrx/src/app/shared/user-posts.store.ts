@@ -15,8 +15,6 @@ const initialState: UserPostsState = {
 };
 
 export const UserPostsStore = signalStore(
-  { providedIn: 'root' },
-
   withState(initialState),
 
   withComputed(({ posts, selectedPostId }) => ({
@@ -35,9 +33,5 @@ export const UserPostsStore = signalStore(
     setPostId(selectedPostId: number | undefined) {
       patchState(store, (state) => ({ ...state, selectedPostId }));
     },
-
-    //reset() {
-    //  patchState(store, () => ({ posts: undefined, selectedPostId: undefined }));
-    //},
   })),
 );

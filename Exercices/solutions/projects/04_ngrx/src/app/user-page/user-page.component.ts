@@ -1,10 +1,10 @@
-import { Component, DestroyRef, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject, input, ViewEncapsulation } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
+import { User } from '../shared/api/api.types';
 import { UserPostsStore } from '../shared/user-posts.store';
-import { UserStore } from '../shared/user.store';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
 @Component({
@@ -14,11 +14,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
   encapsulation: ViewEncapsulation.None,
 })
 export class UserPageComponent {
-  protected userStore = inject(UserStore);
-
   protected userPostsStore = inject(UserPostsStore);
 
-  constructor() {
-    inject(DestroyRef).onDestroy(() => this.userStore.setUserId(undefined));
-  }
+  user = input.required<User>();
 }
