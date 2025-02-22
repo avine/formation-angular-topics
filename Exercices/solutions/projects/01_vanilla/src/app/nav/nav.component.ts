@@ -1,6 +1,6 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserService } from '../shared/user.service';
+import { UsersService } from '../shared/users.service';
 
 @Component({
   selector: 'app-nav',
@@ -11,5 +11,5 @@ import { UserService } from '../shared/user.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent {
-  protected userService = inject(UserService);
+  protected usersService = inject(UsersService);
 }

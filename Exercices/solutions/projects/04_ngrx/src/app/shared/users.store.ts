@@ -4,15 +4,15 @@ import { firstValueFrom } from 'rxjs';
 import { ApiService } from './api/api.service';
 import { User } from './api/api.types';
 
-interface UserState {
+interface UsersState {
   users: User[];
 }
 
-const initialState: UserState = {
+const initialState: UsersState = {
   users: [],
 };
 
-export const UserStore = signalStore(
+export const UsersStore = signalStore(
   { providedIn: 'root' },
 
   withState(initialState),

@@ -1,6 +1,5 @@
 import { Component, inject, input, ViewEncapsulation } from '@angular/core';
 import { User } from '../shared/api/api.types';
-import { UserService } from '../shared/user.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserPostsService } from './user-posts.service';
 
@@ -11,8 +10,6 @@ import { UserPostsService } from './user-posts.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class UserPostsComponent {
-  protected userService = inject(UserService);
-
   protected userPostsService = inject(UserPostsService);
 
   user = input.required<User>();
