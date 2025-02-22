@@ -1,5 +1,5 @@
 <ul>
-  @for (user of usersService.users(); track $index) {
+  @for (user of userService.users(); track $index) {
     <li>
       <a [routerLink]="['/user', user.id]">{{ user.name }} </a>
     </li>

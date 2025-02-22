@@ -2,7 +2,7 @@ import { Component, computed, inject, ViewEncapsulation } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { MenuItem } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
-import { UserService } from '../shared/user.service';
+import { UserStore } from '../shared/user.store';
 
 @Component({
   selector: 'app-nav',
@@ -13,10 +13,10 @@ import { UserService } from '../shared/user.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent {
-  private usersService = inject(UserService);
+  private userStore = inject(UserStore);
 
   items = computed<MenuItem[]>(() =>
-    this.usersService.users().map(
+    this.userStore.users().map(
       (user): MenuItem => ({
         label: user.name,
         routerLink: ['/user', user.id],

@@ -1,10 +1,10 @@
-import { Component, computed, DestroyRef, inject, signal, ViewEncapsulation } from '@angular/core';
+import { Component, DestroyRef, inject, ViewEncapsulation } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
-import { UserPostsService } from '../shared/user-posts.service';
-import { UserService } from '../shared/user.service';
+import { UserPostsStore } from '../shared/user-posts.store';
+import { UserStore } from '../shared/user.store';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
 @Component({
@@ -14,18 +14,11 @@ import { UserDetailsComponent } from './user-details/user-details.component';
   encapsulation: ViewEncapsulation.None,
 })
 export class UserPageComponent {
-  protected userService = inject(UserService);
+  protected userStore = inject(UserStore);
 
-  protected posts = inject(UserPostsService).posts;
-
-  protected selectedPostId = signal<number | undefined>(undefined);
-
-  protected selectedPost = computed(() => {
-    const postId = this.selectedPostId();
-    return this.posts()?.find(({ id }) => id === postId);
-  });
+  protected userPostsStore = inject(UserPostsStore);
 
   constructor() {
-    inject(DestroyRef).onDestroy(() => this.userService.setUserId(undefined));
+    inject(DestroyRef).onDestroy(() => this.userStore.setUserId(undefined));
   }
 }

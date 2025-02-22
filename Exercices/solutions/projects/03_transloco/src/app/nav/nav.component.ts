@@ -13,10 +13,10 @@ import { UserService } from '../shared/user.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent {
-  private usersService = inject(UserService);
+  private userService = inject(UserService);
 
   items = computed<MenuItem[]>(() =>
-    this.usersService.users().map(
+    this.userService.users().map(
       (user): MenuItem => ({
         label: user.name,
         routerLink: ['/user', user.id],

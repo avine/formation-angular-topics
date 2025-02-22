@@ -11,5 +11,5 @@ import { UserService } from '../shared/user.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class NavComponent {
-  protected usersService = inject(UserService);
+  protected userService = inject(UserService);
 }

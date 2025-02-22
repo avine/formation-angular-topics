@@ -1,21 +1,21 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, RedirectCommand, Router } from '@angular/router';
-import { catchError, map, of } from 'rxjs';
-import { UserPostsService } from '../shared/user-posts.service';
-import { UserService } from '../shared/user.service';
+import { UserPostsStore } from '../shared/user-posts.store';
+import { UserStore } from '../shared/user.store';
 
-export const userPageGuard: CanActivateFn = (route) => {
+export const userPageGuard: CanActivateFn = async (route) => {
   const userId = Number(route.params['userId']);
 
-  const success = inject(UserService).setUserId(userId);
-  if (!success) {
+  const userStore = inject(UserStore);
+  userStore.setUserId(userId);
+  if (!userStore.userId()) {
     return new RedirectCommand(inject(Router).parseUrl('/'));
   }
 
-  return inject(UserPostsService)
-    .fetch(userId)
-    .pipe(
-      map(() => true),
-      catchError(() => of(false)),
-    );
+  try {
+    await inject(UserPostsStore).loadPosts(userId);
+    return true;
+  } catch {
+    return false;
+  }
 };

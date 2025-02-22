@@ -8,7 +8,7 @@ import { provideTranslocoPersistLang } from '@jsverse/transloco-persist-lang';
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
-import { UserService } from './shared/user.service';
+import { UserStore } from './shared/user.store';
 import { ThemeService } from './theme/theme.service';
 import { TranslocoHttpLoader } from './transloco-loader';
 
@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(withFetch()),
-    provideAppInitializer(() => inject(UserService).fetchAll()),
+    provideAppInitializer(() => inject(UserStore).loadUsers()),
     provideAnimationsAsync(),
 
     provideAppInitializer(() => inject(ThemeService).restoreTheme()),
