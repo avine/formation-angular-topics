@@ -1,6 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { map, tap } from 'rxjs';
-import { ApiService, Post } from './api';
+import { ApiService } from './api/api.service';
+import { Post } from './api/api.types';
 
 @Injectable({
   providedIn: 'root',

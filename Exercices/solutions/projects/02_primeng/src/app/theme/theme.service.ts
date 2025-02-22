@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable, RendererFactory2, signal } from '@angular/core';
+import { DARK_MODE_CSS_CLASS } from './theme.constants';
 import { Theme } from './theme.types';
 
 @Injectable({
@@ -18,7 +19,10 @@ export class ThemeService {
 
     this._theme.set(nextTheme);
 
-    this.renderer[nextTheme === 'dark' ? 'addClass' : 'removeClass'](this.document.documentElement, 'dark-theme');
+    this.renderer[nextTheme === 'dark' ? 'addClass' : 'removeClass'](
+      this.document.documentElement,
+      DARK_MODE_CSS_CLASS,
+    );
 
     this.document.defaultView?.localStorage.setItem('app-theme', nextTheme);
   }

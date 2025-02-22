@@ -1,7 +1,8 @@
 import { computed, inject } from '@angular/core';
 import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
 import { firstValueFrom } from 'rxjs';
-import { ApiService, Post } from './api';
+import { ApiService } from './api/api.service';
+import { Post } from './api/api.types';
 
 interface UserPostsState {
   posts: Post[] | undefined;

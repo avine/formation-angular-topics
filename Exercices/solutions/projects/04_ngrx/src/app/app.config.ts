@@ -9,6 +9,7 @@ import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
 import { UserStore } from './shared/user.store';
+import { DARK_MODE_CSS_CLASS } from './theme/theme.constants';
 import { ThemeService } from './theme/theme.service';
 import { TranslocoHttpLoader } from './transloco-loader';
 
@@ -26,7 +27,7 @@ export const appConfig: ApplicationConfig = {
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: '.dark-theme',
+          darkModeSelector: `.${DARK_MODE_CSS_CLASS}`,
         },
       },
     }),
