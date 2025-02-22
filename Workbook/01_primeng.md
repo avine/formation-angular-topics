@@ -1,4 +1,4 @@
-## Lab 1: Lorem ipsum
+## Lab 1: PrimeNG
 
 Lorem ipsum
 

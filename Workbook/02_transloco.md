@@ -1,4 +1,4 @@
-## Lab 2: Lorem ipsum
+## Lab 2: Transloco
 
 Lorem ipsum
 

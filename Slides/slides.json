@@ -1,7 +1,7 @@
 [
   "00_schedule.md",
-  "01_ngrx.md",
-  "02_primeng.md",
-  "03_transloco.md",
+  "01_primeng.md",
+  "02_transloco.md",
+  "03_ngrx.md",
   "99_thankyou.md"
 ]

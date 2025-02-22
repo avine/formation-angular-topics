@@ -8,9 +8,9 @@
 
 <!-- .slide: id="master-toc" class="toc" -->
 
-- [NgRx](#/1)
-- [PrimeNG](#/2)
-- [Transloco](#/3)
+- [PrimeNG](#/1)
+- [Transloco](#/2)
+- [NgRx](#/3)
 
 Notes :
 

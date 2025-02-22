@@ -1,7 +1,7 @@
 import { TranslocoGlobalConfig } from '@jsverse/transloco-utils';
 
 const config: TranslocoGlobalConfig = {
-  rootTranslationsPath: 'projects/03_transloco/src/assets/i18n/',
+  rootTranslationsPath: 'projects/02_transloco/src/assets/i18n/',
   langs: ['en', 'fr'],
   keysManager: {},
 };

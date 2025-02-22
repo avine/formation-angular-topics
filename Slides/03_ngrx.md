@@ -8,9 +8,9 @@
 
 <!-- .slide: class="toc" -->
 
-- **[NgRx](#/1)**
-- [PrimeNG](#/2)
-- [Transloco](#/3)
+- [PrimeNG](#/1)
+- [Transloco](#/2)
+- **[NgRx](#/3)**
 
 Notes :
 
@@ -36,4 +36,4 @@ Notes :
 
 
 
-<!-- .slide: class="page-tp1" -->
+<!-- .slide: class="page-tp3" -->

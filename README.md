@@ -1,5 +1,5 @@
 # Angular topics
 
-- NgRx
 - PrimeNG
 - Transloco
+- NgRx
