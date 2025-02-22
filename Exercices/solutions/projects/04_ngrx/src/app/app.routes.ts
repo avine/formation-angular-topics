@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { UserPostsStore } from './shared/user-posts.store';
-import { UserPageComponent } from './user-page/user-page.component';
-import { userPageResolver } from './user-page/user-page.resolver';
+import { UserPostsComponent } from './user-posts/user-posts.component';
+import { userPostsResolver } from './user-posts/user-posts.resolver';
+import { UserPostsStore } from './user-posts/user-posts.store';
 
 export const routes: Routes = [
   {
@@ -11,8 +11,8 @@ export const routes: Routes = [
   },
   {
     path: 'user/:userId',
-    component: UserPageComponent,
-    resolve: { user: userPageResolver },
+    component: UserPostsComponent,
+    resolve: { user: userPostsResolver },
     providers: [UserPostsStore],
   },
 ];

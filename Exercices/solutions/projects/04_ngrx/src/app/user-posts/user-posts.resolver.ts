@@ -1,13 +1,12 @@
 import { inject } from '@angular/core';
 import { RedirectCommand, ResolveFn, Router } from '@angular/router';
-import { firstValueFrom } from 'rxjs';
 import { User } from '../shared/api/api.types';
-import { UserPostsService } from '../shared/user-posts.service';
-import { UserService } from '../shared/user.service';
+import { UserStore } from '../shared/user.store';
+import { UserPostsStore } from './user-posts.store';
 
-export const userPageResolver: ResolveFn<User> = async (route) => {
+export const userPostsResolver: ResolveFn<User> = async (route) => {
   const userId = Number(route.params['userId']);
-  const user = inject(UserService)
+  const user = inject(UserStore)
     .users()
     .find(({ id }) => id === userId);
 
@@ -15,7 +14,7 @@ export const userPageResolver: ResolveFn<User> = async (route) => {
     return new RedirectCommand(inject(Router).parseUrl('/'));
   }
 
-  await firstValueFrom(inject(UserPostsService).loadPosts(userId));
+  await inject(UserPostsStore).loadPosts(userId);
 
   return user;
 };

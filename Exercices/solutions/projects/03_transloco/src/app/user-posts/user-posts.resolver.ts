@@ -2,10 +2,10 @@ import { inject } from '@angular/core';
 import { RedirectCommand, ResolveFn, Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { User } from '../shared/api/api.types';
-import { UserPostsService } from '../shared/user-posts.service';
 import { UserService } from '../shared/user.service';
+import { UserPostsService } from './user-posts.service';
 
-export const userPageResolver: ResolveFn<User> = async (route) => {
+export const userPostsResolver: ResolveFn<User> = async (route) => {
   const userId = Number(route.params['userId']);
   const user = inject(UserService)
     .users()

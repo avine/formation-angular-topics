@@ -1,20 +1,22 @@
 import { Component, inject, input, ViewEncapsulation } from '@angular/core';
-import { TranslocoDirective } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
 import { User } from '../shared/api/api.types';
-import { UserPostsStore } from '../shared/user-posts.store';
+import { UserService } from '../shared/user.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserPostsService } from './user-posts.service';
 
 @Component({
-  selector: 'app-user-page',
-  imports: [TranslocoDirective, ButtonModule, CardModule, DialogModule, UserDetailsComponent],
-  templateUrl: './user-page.component.html',
+  selector: 'app-user-posts',
+  imports: [ButtonModule, CardModule, DialogModule, UserDetailsComponent],
+  templateUrl: './user-posts.component.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class UserPageComponent {
-  protected userPostsStore = inject(UserPostsStore);
+export class UserPostsComponent {
+  protected userService = inject(UserService);
+
+  protected userPostsService = inject(UserPostsService);
 
   user = input.required<User>();
 }

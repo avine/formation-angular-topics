@@ -1,7 +1,7 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { map, tap } from 'rxjs';
-import { ApiService } from './api/api.service';
-import { Post } from './api/api.types';
+import { ApiService } from '../shared/api/api.service';
+import { Post } from '../shared/api/api.types';
 
 @Injectable(/* not provided in root */)
 export class UserPostsService {
