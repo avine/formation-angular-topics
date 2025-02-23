@@ -71,22 +71,6 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/00_vanilla/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/00_vanilla/public"
-              }
-            ],
-            "styles": ["projects/00_vanilla/src/styles.scss"],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -163,22 +147,6 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/01_primeng/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/01_primeng/public"
-              }
-            ],
-            "styles": ["projects/01_primeng/src/styles.scss"],
-            "scripts": []
-          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
@@ -257,22 +225,6 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/02_transloco/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/02_transloco/public"
-              }
-            ],
-            "styles": ["projects/02_transloco/src/styles.scss"],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -350,22 +302,6 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/03_ngrx/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/03_ngrx/public"
-              }
-            ],
-            "styles": ["projects/03_ngrx/src/styles.scss"],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -442,22 +378,6 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/04_rxresource/tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/04_rxresource/public"
-              }
-            ],
-            "styles": ["projects/04_rxresource/src/styles.scss"],
-            "scripts": []
-          }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",

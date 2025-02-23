@@ -2,6 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { TranslocoDatePipe } from '@jsverse/transloco-locale';
+import { TagModule } from 'primeng/tag';
 import { NavComponent } from './nav/nav.component';
 import { SelectLangComponent } from './select-lang/select-lang.component';
 import { ThemeComponent } from './theme/theme.component';
@@ -14,6 +15,7 @@ import { ThemeComponent } from './theme/theme.component';
     RouterLink,
     RouterOutlet,
     TranslocoDirective,
+    TagModule,
     NavComponent,
     SelectLangComponent,
     ThemeComponent,
