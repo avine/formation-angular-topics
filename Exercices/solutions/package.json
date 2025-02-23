@@ -7,6 +7,7 @@
     "start:1": "ng serve 01_primeng --port 4100",
     "start:2": "ng serve 02_transloco --port 4200",
     "start:3": "ng serve 03_ngrx --port 4300",
+    "start:4": "ng serve 04_rxresource --port 4400",
     "test": "ng test",
     "lint": "ng lint",
     "format:check": "prettier --check .",

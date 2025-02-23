@@ -3,3 +3,4 @@
 - PrimeNG
 - Transloco
 - NgRx
+- RxResource

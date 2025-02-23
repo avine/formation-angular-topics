@@ -1,0 +1,12 @@
+import { inject, Injectable } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
+import { ApiService } from './api/api.service';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UsersService {
+  private apiService = inject(ApiService);
+
+  users = rxResource({ loader: () => this.apiService.getUsers() });
+}

@@ -1,0 +1,36 @@
+@if (user(); as _user) {
+  <p-card [header]="_user.name">
+    <app-user-details [user]="_user" />
+  </p-card>
+}
+
+<h2 style="margin-bottom: 0">
+  <ng-container *transloco="let t">{{ t('posts') }}</ng-container>
+</h2>
+@for (post of posts.value(); track post.id) {
+  <p-button
+    icon="pi pi-angle-right"
+    [label]="post.title"
+    [link]="true"
+    [style]="{ textAlign: 'left' }"
+    (onClick)="selectedPostId.set(post.id)"
+  /><br />
+}
+
+@if (loading()) {
+  <p style="padding-left: 0.75rem"><i class="pi pi-spinner pi-spin"></i></p>
+}
+
+@let post = selectedPost();
+<p-dialog
+  [style]="{ width: '480px', maxWidth: '80%' }"
+  [modal]="true"
+  [resizable]="false"
+  [draggable]="false"
+  [dismissableMask]="true"
+  [visible]="post !== undefined"
+  (visibleChange)="selectedPostId.set(undefined)"
+  [header]="post?.title"
+>
+  {{ post?.body }}
+</p-dialog>

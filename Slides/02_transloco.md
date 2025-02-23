@@ -11,6 +11,7 @@
 - [PrimeNG](#/1)
 - **[Transloco](#/2)**
 - [NgRx](#/3)
+- [RxResource](#/4)
 
 Notes :
 
