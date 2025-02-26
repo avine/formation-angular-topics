@@ -1,4 +1,4 @@
-## Lab 3: RxResource
+## Lab 4: RxResource
 
 Lorem ipsum
 
