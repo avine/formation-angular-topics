@@ -1,4 +1,4 @@
-# NgRx
+# RxResource
 
 <!-- .slide: class="page-title" -->
 
@@ -12,6 +12,7 @@
 - [Transloco](#/2)
 - [NgRx](#/3)
 - **[RxResource](#/4)**
+- [RxJS](#/5)
 
 Notes :
 
@@ -37,4 +38,4 @@ Notes :
 
 
 
-<!-- .slide: class="page-tp3" -->
+<!-- .slide: class="page-tp4" -->

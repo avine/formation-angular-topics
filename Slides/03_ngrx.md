@@ -12,6 +12,7 @@
 - [Transloco](#/2)
 - **[NgRx](#/3)**
 - [RxResource](#/4)
+- [RxJS](#/5)
 
 Notes :
 
