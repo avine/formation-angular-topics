@@ -4,3 +4,4 @@
 - Transloco
 - NgRx
 - RxResource
+- RxJS
