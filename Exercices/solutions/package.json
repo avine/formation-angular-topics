@@ -27,11 +27,11 @@
     "@jsverse/transloco-locale": "^7.0.1",
     "@jsverse/transloco-persist-lang": "^7.0.2",
     "@ngrx/signals": "^19.0.1",
-    "@primeng/themes": "^19.0.6",
+    "@primeng/themes": "^19.0.9",
     "primeicons": "^7.0.0",
-    "primeng": "^19.0.6",
-    "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
+    "primeng": "^19.0.9",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
@@ -39,12 +39,12 @@
     "@angular/cli": "^19.2.0",
     "@angular/compiler-cli": "^19.2.0",
     "angular-eslint": "19.1.0",
-    "eslint": "^9.20.0",
-    "eslint-config-prettier": "^10.0.1",
+    "eslint": "^9.21.0",
+    "eslint-config-prettier": "^10.0.2",
     "eslint-plugin-prettier": "^5.2.3",
-    "prettier": "^3.5.1",
+    "prettier": "^3.5.2",
     "prettier-plugin-organize-imports": "^4.1.0",
-    "typescript": "~5.7.2",
+    "typescript": "~5.7.3",
     "typescript-eslint": "8.23.0"
   }
 }
