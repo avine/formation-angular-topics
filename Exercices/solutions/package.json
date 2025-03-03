@@ -8,6 +8,7 @@
     "start:2": "ng serve 02_transloco --port 4200",
     "start:3": "ng serve 03_ngrx --port 4300",
     "start:4": "ng serve 04_rxresource --port 4400",
+    "start:5": "ng serve 05_httpresource --port 4500",
     "lint": "ng lint",
     "format:check": "prettier --check .",
     "format": "prettier --write ."

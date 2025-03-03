@@ -3,5 +3,6 @@
   "01_primeng.md",
   "02_transloco.md",
   "03_ngrx.md",
-  "04_rxresource.md"
+  "04_rxresource.md",
+  "05_httpresource.md"
 ]

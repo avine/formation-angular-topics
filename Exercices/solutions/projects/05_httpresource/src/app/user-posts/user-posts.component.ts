@@ -1,11 +1,10 @@
-import { Component, computed, inject, input, signal, ViewEncapsulation } from '@angular/core';
-import { rxResource } from '@angular/core/rxjs-interop';
+import { httpResource } from '@angular/common/http';
+import { Component, computed, input, signal, ViewEncapsulation } from '@angular/core';
 import { TranslocoDirective } from '@jsverse/transloco';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DialogModule } from 'primeng/dialog';
-import { ApiService } from '../shared/api/api.service';
-import { User } from '../shared/api/api.types';
+import { Post, User } from '../shared/api/api.types';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
 @Component({
@@ -15,14 +14,12 @@ import { UserDetailsComponent } from './user-details/user-details.component';
   encapsulation: ViewEncapsulation.None,
 })
 export class UserPostsComponent {
-  protected apiService = inject(ApiService);
-
   user = input.required<User>();
 
-  posts = rxResource({
-    request: () => this.user().id,
-    loader: ({ request: userId }) => this.apiService.getUserPosts(userId),
-  });
+  posts = httpResource<Post[]>(() => ({
+    url: 'https://jsonplaceholder.typicode.com/posts',
+    params: { userId: this.user().id },
+  }));
 
   selectedPostId = signal<number | undefined>(undefined);
 

@@ -387,6 +387,83 @@
           }
         }
       }
+    },
+    "05_httpresource": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/05_httpresource",
+      "sourceRoot": "projects/05_httpresource/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/05_httpresource",
+            "index": "projects/05_httpresource/src/index.html",
+            "browser": "projects/05_httpresource/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/05_httpresource/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/05_httpresource/public"
+              }
+            ],
+            "styles": ["projects/05_httpresource/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "05_httpresource:build:production"
+            },
+            "development": {
+              "buildTarget": "05_httpresource:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/05_httpresource/**/*.ts", "projects/05_httpresource/**/*.html"],
+            "eslintConfig": "projects/05_httpresource/eslint.config.js"
+          }
+        }
+      }
     }
   },
   "cli": {
