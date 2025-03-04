@@ -10,12 +10,11 @@
 
 - [PrimeNG](#/1)
 - [Transloco](#/2)
-- [NgRx](#/3)
+- [NgRx signals](#/3)
 - [RxResource](#/4)
 - [HttpResource](#/5)
 - **[RxJS](#/6)**
-
-Notes :
+- [In-depth resources](#/7)
 
 
 
@@ -33,8 +32,6 @@ Notes :
   <img src="./resources/rxjs.png" alt="ReactiveX" height="200" />
 </p>
 
-Notes :
-
 
 
 ## In a nutshell
@@ -42,8 +39,6 @@ Notes :
 - Observables:
   - represent a stream of data that can be subscribed to
   - allowing multiple values to be emitted over time
-
-Notes :
 
 
 
@@ -54,11 +49,6 @@ Notes :
   - `Subscription`
   - `Operators`
   - `Subjects`
-
-Notes :
-
-The following slides only show code examples.
-Everything is summarized in the slide "RxJS - Summary so far"...
 
 
 
@@ -91,12 +81,6 @@ data$.subscribe(observer);                        // output: 1, 2, Done
 
 - Subscriber and observer methods match: `next`, `complete` (and also `error`)
 
-Notes :
-
-- By convention, a variable representing an observable ends with the symbol `$`
-
-- The `.subscribe()` method activates the observable to emit its data stream
-
 
 
 ## Observable & Observer 2/4
@@ -123,8 +107,6 @@ data$.subscribe(observer);                        // output: 1, 2, Oops!
 </div>
 
 - Example of `error` event instead of `complete` event
-
-Notes :
 
 
 
@@ -153,8 +135,6 @@ data$.subscribe(observer);                        // output: 1, 2
 
 - Once the observable completes (or is in error), further calls to `next` are ignored
 
-Notes :
-
 
 
 ## Observable & Observer 4/4
@@ -181,8 +161,6 @@ data$.subscribe(next);                            // output: 1, 2
 </div>
 
 - You can use a function as observer to simply listen to `next` events
-
-Notes :
 
 
 
@@ -212,8 +190,6 @@ data$.subscribe({
 }); // output: 1, 2, 3, Done
 ```
 
-Notes :
-
 
 
 ## Subscription 2/3
@@ -242,8 +218,6 @@ const subscription: Subscription = data$.subscribe((data: number) => {
   }
 }); // output: 1, tick, 2, tick, 3, tick, tick, tick, ...
 ```
-
-Notes :
 
 
 
@@ -275,9 +249,7 @@ const subscription: Subscription = data$.subscribe((data: number) => {
 ```
 
 Notes :
-
 - The `.subscribe()` method returns a `Subscription` allowing the consumer to `.unsubscribe()` from the activated observable
-
 - Unsubscription is necessary to avoid memory leaks when the consumer is no longer interested in the data
   - Unless the observable is already in "complete" (or "error" state)
 
@@ -294,8 +266,6 @@ const source$ = of('hello', 123);
 
 source$.subscribe(console.log); // output: hello, 123
 ```
-
-Notes :
 
 
 
@@ -315,8 +285,6 @@ const fromPromise$ = from(new Promise((resolve) => resolve('Done!')));
 fromPromise$.subscribe(console.log); // output: Done!
 ```
 
-Notes :
-
 
 
 ## Observable source 3/4
@@ -330,8 +298,6 @@ const fromDocumentClick$ = fromEvent(document, 'click');
 
 fromDocumentClick$.subscribe((event: Event) => console.log(event));
 ```
-
-Notes :
 
 
 
@@ -348,8 +314,6 @@ error$.subscribe({
   error: (err: Error) => console.error(err.message) // output: Oops!
 });
 ```
-
-Notes :
 
 
 
@@ -384,8 +348,6 @@ data$.pipe(
 
 </div>
 
-Notes :
-
 
 
 ## Operators | synchronous 2/2
@@ -417,8 +379,6 @@ data$.pipe(
 ```
 
 </div>
-
-Notes :
 
 
 
@@ -454,13 +414,9 @@ todoId$.pipe(concatMap((id) => fetchTodoFactory$(id))).subscribe(console.log);
 </div>
 
 Notes :
-
 - `todoId$` emits the values `1` and `2` synchronously.
-
 - `concatMap` waits until `Todo` with id `1` is completed before fetching `Todo` with id `2`.
-
 - The same result can be achieved using: `from(fetch('...'))`
-
 - Explain the difference when replacing `concatMap` with `mergeMap`
 
 
@@ -494,8 +450,6 @@ fromEvent(input, 'input').pipe(
 
 </div>
 
-Notes :
-
 
 
 ## Operators | asynchronous 3/4
@@ -523,8 +477,6 @@ source$.subscribe({
 // Output => 0, 1, 2, 3, Fallback, Done!
 ```
 
-Notes :
-
 
 
 ## Operators | asynchronous 4/4
@@ -539,8 +491,6 @@ Notes :
   Projects each source value to an Observable which is merged in the output Observable, emitting values only from the most recently projected Observable.
 
 - *a lot more...*
-
-Notes :
 
 
 
@@ -559,8 +509,6 @@ Notes :
   - Unless the observable is already in "complete" (or "error" state)
 
 - The `Operators` allow to transform the emitted values and make the observables very powerful
-
-Notes :
 
 
 
@@ -589,8 +537,6 @@ const observable$ = subject$.asObservable();
 observable$.next(/* ... */); // ❌ Property 'next' does not exist on type 'Observable'
 ```
 
-Notes :
-
 
 
 ## Subject 2/2
@@ -617,8 +563,6 @@ data$.complete();
 // output: #sub1(B), #sub1(C), #sub2(C), #sub1(D), #sub2(D)
 ```
 
-Notes :
-
 
 
 ## Observable compared to Subject
@@ -643,8 +587,6 @@ data$.subscribe((data) => console.log(`#sub2(${data})`));
 
 // output: #sub1(A), #sub1(B), #sub2(A), #sub2(B)
 ```
-
-Notes :
 
 
 
@@ -673,8 +615,6 @@ data$.complete();
 // output: #sub1(A), #sub1(B), #sub2(B), #sub1(C), #sub2(C), #sub1(D), #sub2(D), #snapshot(D)
 ```
 
-Notes :
-
 
 
 ## Subject | ReplaySubject
@@ -700,8 +640,6 @@ data$.complete();
 
 // output: #sub1(A), #sub1(B), #sub2(A), #sub2(B), #sub1(C), #sub2(C), #sub1(D), #sub2(D)
 ```
-
-Notes :
 
 
 
@@ -730,8 +668,6 @@ export class TodoService {
   }
 }
 ```
-
-Notes :
 
 
 
@@ -762,9 +698,7 @@ export class TodoService {
 ```
 
 Notes :
-
 - The advantage of `ReplaySubject` (over `BehaviorSubject`) is that you don't need to deal with the value `undefined`.
-
 - This is because `ReplaySubject` does not have an initial value.
 
 
@@ -792,8 +726,6 @@ todoService.todos$.subscribe((todos) => console.log(todos));
 todoService.todos$.pipe(map(({ length }) => length)).subscribe((length) => console.log(length));
 ```
 
-Notes :
-
 
 
 ## Conclusion
@@ -808,8 +740,6 @@ Notes :
 
 - And there's so much more to learn:
   - `combineLatest`, `debounceTime`, `delay`, `pairwise`, `reduce`, `share`, `shareReplay`, `skip`, `skipUntil`, `skipWhile`, `startWith`, `take`, `takeUntil`, `toArray`, `withLatestFrom`, `zip`, ...
-
-Notes : 
 
 
 

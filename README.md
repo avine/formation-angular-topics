@@ -2,7 +2,7 @@
 
 - PrimeNG
 - Transloco
-- NgRx
+- NgRx signals
 - RxResource
 - HttpResource
 - RxJS

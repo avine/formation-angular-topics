@@ -4,7 +4,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';
 import { provideTranslocoLocale } from '@jsverse/transloco-locale';
-import { provideTranslocoPersistLang } from '@jsverse/transloco-persist-lang';
+import { provideTranslocoPersistLang, TranslocoPersistLangService } from '@jsverse/transloco-persist-lang';
 import Aura from '@primeng/themes/aura';
 import { providePrimeNG } from 'primeng/config';
 import { routes } from './app.routes';
@@ -43,6 +43,8 @@ export const appConfig: ApplicationConfig = {
     }),
     provideTranslocoLocale({ langToLocaleMapping: { en: 'en-US', fr: 'fr-FR' } }),
     provideTranslocoPersistLang({ storage: { useValue: localStorage } }),
-    provideAppInitializer(() => inject(TranslocoService).load('en')),
+    provideAppInitializer(() =>
+      inject(TranslocoService).load(inject(TranslocoPersistLangService).getCachedLang() ?? 'en'),
+    ),
   ],
 };

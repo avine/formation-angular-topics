@@ -2,9 +2,10 @@
   "00_schedule.md",
   "01_primeng.md",
   "02_transloco.md",
-  "03_ngrx.md",
+  "03_ngrx_signals.md",
   "04_rxresource.md",
   "05_httpresource.md",
   "06_rxjs.md",
+  "07_in_depth_resources.md",
   "99_thankyou.md"
 ]

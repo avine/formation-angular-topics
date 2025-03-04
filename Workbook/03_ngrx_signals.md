@@ -1,4 +1,4 @@
-## Lab 3: NgRx
+## Lab 3: NgRx signals
 
 Lorem ipsum
 

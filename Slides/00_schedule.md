@@ -10,12 +10,11 @@
 
 - [PrimeNG](#/1)
 - [Transloco](#/2)
-- [NgRx](#/3)
+- [NgRx signals](#/3)
 - [RxResource](#/4)
 - [HttpResource](#/5)
 - [RxJS](#/6)
-
-Notes :
+- [In-depth resources](#/7)
 
 
 
@@ -24,8 +23,6 @@ Notes :
 - Schedules
 - Lunch & breaks
 - Other questions ?
-
-Notes :
 
 
 
