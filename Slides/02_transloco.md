@@ -63,6 +63,54 @@ export const appConfig: ApplicationConfig = {
 
 
 
+## Transloco - Translation files
+
+- `public/assets/i18n/en.json`
+
+```json
+{
+  "appTitle": "User posts",
+  "copyright": "Copyright"
+}
+```
+
+- `public/assets/i18n/fr.json`
+
+```json
+{
+  "appTitle": "Messages des utilisateurs",
+  "copyright": "Tous droits réservés"
+}
+```
+
+
+
+## Transloco - Directive
+
+- Import `TranslocoDirective` directive in your components
+
+```ts
+import { Component, RouterOutlet } from '@angular/core';
+import { TranslocoDirective } from '@jsverse/transloco';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, TranslocoDirective],
+  template: `
+    <ng-container *transloco="let t">
+      <header>{{ t('appTitle') }}</header>
+
+      <router-outlet />
+
+      <footer>{{ t('copyright') }}</footer>
+    </ng-container>
+  `,
+})
+export class AppComponent {}
+```
+
+
+
 ## Transloco - Plugins | Locale 1/3
 
 - Install the following plugin to add localization support to Transloco
