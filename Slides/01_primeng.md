@@ -62,13 +62,13 @@ import { Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
 
 @Component({
-    selector: 'app-root',
-    imports: [CardModule],
-    template: `
-      <p-card header="Simple Card">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p-card>
-    `,
+  selector: 'app-root',
+  imports: [CardModule],
+  template: `
+    <p-card header="Simple Card">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p-card>
+  `,
 })
 export class AppComponent {}
 ```
@@ -95,11 +95,11 @@ npm install primeicons
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
-    template: `
-      <i class="pi pi-check"></i>
-      <i class="pi pi-times"></i>
-    `,
+  selector: 'app-root',
+  template: `
+    <i class="pi pi-check"></i>
+    <i class="pi pi-times"></i>
+  `,
 })
 export class AppComponent {}
 ```

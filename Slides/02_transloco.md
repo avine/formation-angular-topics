@@ -68,7 +68,7 @@ export const appConfig: ApplicationConfig = {
 - Install the following plugin to add localization support to Transloco
 
 ```shell
-npm i @jsverse/transloco-locale
+npm install @jsverse/transloco-locale
 ```
 
 
@@ -99,9 +99,9 @@ import { Component } from '@angular/core';
 import { TranslocoDatePipe } from '@jsverse/transloco-locale';
 
 @Component({
-    selector: 'app-root',
-    imports: [TranslocoDatePipe],
-    template: `<p>{{ now | translocoDate }}</p>`,
+  selector: 'app-root',
+  imports: [TranslocoDatePipe],
+  template: `<p>{{ now | translocoDate }}</p>`,
 })
 export class AppComponent {
   now = Date.now();
@@ -115,7 +115,7 @@ export class AppComponent {
 - Install the following plugin to persist selected language
 
 ```shell
-npm i @jsverse/transloco-persist-lang
+npm install @jsverse/transloco-persist-lang
 ```
 
 
