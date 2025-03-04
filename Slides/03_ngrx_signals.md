@@ -20,6 +20,8 @@
 
 ## NgRx signals - Installation
 
+> NgRx Signals is a standalone library that provides a reactive state management solution and a set of utilities for Angular Signals
+
 - Install library
 
 ```shell

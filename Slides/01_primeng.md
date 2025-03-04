@@ -20,6 +20,8 @@
 
 ## PrimeNG - Installation
 
+> Enhance your web applications with PrimeNG's comprehensive suite of customizable, feature-rich UI components
+
 - Install core library
 
 ```shell

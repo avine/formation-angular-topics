@@ -20,6 +20,8 @@
 
 ## Transloco - Installation
 
+> Transloco allows you to define translations for your content in different languages and switch between them easily in runtime
+
 - Run the following schematics and specify the list of expected languages
 
 ```shell

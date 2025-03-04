@@ -34,6 +34,16 @@ body {
   --content-block-vertical-margin: 15px; /* a bit smaller than `--content-block-vertical-margin: 20px;` */
 }
 
+.reveal blockquote {
+  border-radius: 0.25em;
+  margin: 0 0 var(--content-block-vertical-margin) 0;
+  padding: 0.5em 0.75em;
+}
+
+.reveal blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 /* Replace ul `list-style` */
 /*.reveal ul {
   list-style: none;

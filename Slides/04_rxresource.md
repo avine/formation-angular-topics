@@ -20,14 +20,11 @@
 
 ## Rx Resource - Definition
 
-- Construct an RxResource that projects a reactive request to an observable defined by a loader function,
-  which exposes the emitted values via signals
+> Projects a reactive request to an observable defined by a loader function, which exposes the emitted values via signals
 
 ```ts
 import { Component, inject, input } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { ApiService } from '../shared/api/api.service';
-import { User } from '../shared/api/api.types';
 
 @Component({
   selector: 'app-user-posts',
@@ -49,13 +46,14 @@ export class UserPostsComponent {
 
 ## Rx Resource - Properties
 
-- RxResource provides useful properties
+- `RxResource` provides useful properties
   - `value()`: The current value of the Resource, or undefined if there is no current value
   - `status()`: The current status of the Resource
   - `reload()`: Instructs the resource to reload
   - `isLoading()`: Whether this resource is loading a new value (or reloading the existing one)
   - `set()`: Convenience wrapper for `value.set`
   - `update()`: Convenience wrapper for `value.update`
+  - ...
 
 
 
