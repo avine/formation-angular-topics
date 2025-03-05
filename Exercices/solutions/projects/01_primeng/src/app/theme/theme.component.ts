@@ -6,7 +6,6 @@ import { ThemeService } from './theme.service';
   selector: 'app-theme',
   imports: [ButtonModule],
   templateUrl: './theme.component.html',
-  styleUrl: './theme.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
 export class ThemeComponent {

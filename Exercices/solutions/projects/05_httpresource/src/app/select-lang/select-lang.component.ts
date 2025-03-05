@@ -8,7 +8,6 @@ import { MenuModule } from 'primeng/menu';
   selector: 'app-select-lang',
   imports: [ButtonModule, MenuModule],
   templateUrl: './select-lang.component.html',
-  styleUrl: './select-lang.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
 export class SelectLangComponent {
