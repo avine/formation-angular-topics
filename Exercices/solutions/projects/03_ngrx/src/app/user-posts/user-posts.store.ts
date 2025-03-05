@@ -1,5 +1,5 @@
 import { computed, inject } from '@angular/core';
-import { patchState, signalStore, withComputed, withMethods, withState } from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withMethods, withProps, withState } from '@ngrx/signals';
 import { firstValueFrom } from 'rxjs';
 import { ApiService } from '../shared/api/api.service';
 import { Post } from '../shared/api/api.types';
@@ -24,9 +24,13 @@ export const UserPostsStore = signalStore(
     }),
   })),
 
-  withMethods((store, apiService = inject(ApiService)) => ({
+  withProps(() => ({
+    _apiService: inject(ApiService),
+  })),
+
+  withMethods((store) => ({
     async loadPosts(userId: number) {
-      const posts = await firstValueFrom(apiService.getUserPosts(userId));
+      const posts = await firstValueFrom(store._apiService.getUserPosts(userId));
       patchState(store, (state) => ({ ...state, posts }));
     },
 

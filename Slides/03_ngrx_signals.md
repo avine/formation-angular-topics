@@ -79,6 +79,27 @@ export const UserPostsStore = signalStore(
 
 
 
+## NgRx signals - withProps
+
+- Public and private properties can be added to the store using the `withProps` feature
+
+- Define private members that cannot be accessed from outside the store by using the "`_`" prefix
+  - note that this applies to all store features (such as `withState`, `withComputed`, ...)
+
+```ts
+import { inject } from '@angular/core';
+import { signalStore, withProps } from '@ngrx/signals';
+import { ApiService } from '../shared/api/api.service';
+
+export const UserPostsStore = signalStore(
+  withProps(() => ({
+    _apiService: inject(ApiService),
+  })),
+);
+```
+
+
+
 ## NgRx signals - withMethods
 
 - Methods can be added to the store using the `withMethods` feature
@@ -86,19 +107,16 @@ export const UserPostsStore = signalStore(
 - Use `patchState` function to update the store state
 
 ```ts
-import { inject } from '@angular/core';
 import { patchState, signalStore, withMethods } from '@ngrx/signals';
 import { firstValueFrom } from 'rxjs';
-import { ApiService } from '../shared/api/api.service';
-import { Post } from '../shared/api/api.types';
 
 export const UserPostsStore = signalStore(
-  withMethods((store, apiService = inject(ApiService)) => ({
+  withMethods((store) => ({
     async loadPosts(userId: number) {
-      const posts = await firstValueFrom(apiService.getUserPosts(userId));
+      const posts = await firstValueFrom(store._apiService.getUserPosts(userId));
       patchState(store, (state) => ({ ...state, posts }));
     },
-  
+
     setPostId(selectedPostId: number | undefined) {
       patchState(store, (state) => ({ ...state, selectedPostId }));
     },
