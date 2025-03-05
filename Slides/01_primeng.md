@@ -8,6 +8,8 @@
 
 <!-- .slide: class="toc" -->
 
+<img src="./resources/primeng.png" style="float: right; margin: 80px 250px 0 0" />
+
 - **[PrimeNG](#/1)**
 - [Transloco](#/2)
 - [NgRx signals](#/3)

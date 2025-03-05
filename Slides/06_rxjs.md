@@ -8,6 +8,8 @@
 
 <!-- .slide: class="toc" -->
 
+<img src="./resources/rxjs.png" style="float: right; margin: 80px 250px 0 0; width: 200px" />
+
 - [PrimeNG](#/1)
 - [Transloco](#/2)
 - [NgRx signals](#/3)
@@ -26,15 +28,9 @@
 
 - Let's focus on the JavaScript implementation: *RxJS*
 
-<br /><br />
-
-<p style="text-align: center">
-  <img src="./resources/rxjs.png" alt="ReactiveX" height="200" />
-</p>
 
 
-
-## In a nutshell
+## RxJS - In a nutshell
 
 - Observables:
   - represent a stream of data that can be subscribed to
@@ -42,7 +38,7 @@
 
 
 
-## Building blocks
+## RxJS - Building blocks
 
 - To understand RxJS, you need to learn the following concepts:
   - `Observable` and `Observer`
@@ -52,7 +48,7 @@
 
 
 
-## Observable & Observer 1/4
+## RxJS - Observable & Observer 1/4
 
 <div>
 
@@ -83,7 +79,7 @@ data$.subscribe(observer);                        // output: 1, 2, Done
 
 
 
-## Observable & Observer 2/4
+## RxJS - Observable & Observer 2/4
 
 <div>
 
@@ -110,7 +106,7 @@ data$.subscribe(observer);                        // output: 1, 2, Oops!
 
 
 
-## Observable & Observer 3/4
+## RxJS - Observable & Observer 3/4
 
 <div>
 
@@ -137,7 +133,7 @@ data$.subscribe(observer);                        // output: 1, 2
 
 
 
-## Observable & Observer 4/4
+## RxJS - Observable & Observer 4/4
 
 <div>
 
@@ -164,7 +160,7 @@ data$.subscribe(next);                            // output: 1, 2
 
 
 
-## Subscription 1/3 (not yet...)
+## RxJS - Subscription 1/3 (not yet...)
 
 - Example of an observable that completes itself properly (without memory leak)
 
@@ -192,7 +188,7 @@ data$.subscribe({
 
 
 
-## Subscription 2/3
+## RxJS - Subscription 2/3
 
 - Example of an observable that never completes and have a *memory leak*! 😱
 
@@ -221,7 +217,7 @@ const subscription: Subscription = data$.subscribe((data: number) => {
 
 
 
-## Subscription 3/3
+## RxJS - Subscription 3/3
 
 - Example of an observable that never completes but cleans up itself properly
 
@@ -255,7 +251,7 @@ Notes :
 
 
 
-## Observable source 1/4
+## RxJS - Observable source 1/4
 
 - Observable can be created using `of` function:
 
@@ -269,7 +265,7 @@ source$.subscribe(console.log); // output: hello, 123
 
 
 
-## Observable source 2/4
+## RxJS - Observable source 2/4
 
 - Observable can be created from existing value (like `Array` or `Promise`) using `from` function:
 
@@ -287,7 +283,7 @@ fromPromise$.subscribe(console.log); // output: Done!
 
 
 
-## Observable source 3/4
+## RxJS - Observable source 3/4
 
 - Observable can be created using `fromEvent` function:
 
@@ -301,7 +297,7 @@ fromDocumentClick$.subscribe((event: Event) => console.log(event));
 
 
 
-## Observable source 4/4
+## RxJS - Observable source 4/4
 
 - Observable that emits an error event can be created using `throwError` function:
 
@@ -317,7 +313,7 @@ error$.subscribe({
 
 
 
-## Operators | synchronous 1/2
+## RxJS - Operators | synchronous 1/2
 
 <div>
 
@@ -350,7 +346,7 @@ data$.pipe(
 
 
 
-## Operators | synchronous 2/2
+## RxJS - Operators | synchronous 2/2
 
 <div>
 
@@ -382,7 +378,7 @@ data$.pipe(
 
 
 
-## Operators | asynchronous 1/4
+## RxJS - Operators | asynchronous 1/4
 
 <div>
 
@@ -421,7 +417,7 @@ Notes :
 
 
 
-## Operators | asynchronous 2/4
+## RxJS - Operators | asynchronous 2/4
 
 <div>
 
@@ -452,7 +448,7 @@ fromEvent(input, 'input').pipe(
 
 
 
-## Operators | asynchronous 3/4
+## RxJS - Operators | asynchronous 3/4
 
 - The `catchError` operator should:
   - return another observable
@@ -479,7 +475,7 @@ source$.subscribe({
 
 
 
-## Operators | asynchronous 4/4
+## RxJS - Operators | asynchronous 4/4
 
 - `concatMap`<br />
   Projects each source value to an Observable which is merged in the output Observable, in a serialized fashion waiting for each one to complete before merging the next.
@@ -494,7 +490,7 @@ source$.subscribe({
 
 
 
-## Summary so far
+## RxJS - Summary so far
 
 - By convention, a variable representing an observable ends with the symbol `$`
 
@@ -512,7 +508,7 @@ source$.subscribe({
 
 
 
-## Subject 1/2
+## RxJS - Subject 1/2
 
 - A `Subject` implements both `Observable` and `Observer` interfaces
 
@@ -539,7 +535,7 @@ observable$.next(/* ... */); // ❌ Property 'next' does not exist on type 'Obse
 
 
 
-## Subject 2/2
+## RxJS - Subject 2/2
 
 - Unlike observable:
   - subject implementation lives outside its instantiation (calling `next`, `error`, `complete`)
@@ -565,7 +561,7 @@ data$.complete();
 
 
 
-## Observable compared to Subject
+## RxJS - Observable compared to Subject
 
 - Unlike subject:
   - observable implementation lives inside its instantiation (calling `next`, `error`, `complete`)
@@ -590,7 +586,7 @@ data$.subscribe((data) => console.log(`#sub2(${data})`));
 
 
 
-## Subject | BehaviorSubject
+## RxJS - Subject | BehaviorSubject
 
 A variant of Subject that requires an initial value and emits its current value whenever it is subscribed to.
 
@@ -617,7 +613,7 @@ data$.complete();
 
 
 
-## Subject | ReplaySubject
+## RxJS - Subject | ReplaySubject
 
 A variant of Subject that "replays" old values to new subscribers by emitting them when they first subscribe.
 
@@ -643,7 +639,7 @@ data$.complete();
 
 
 
-## State management 1/3
+## RxJS - State management 1/3
 
 - Expose application data through service facade and observables
 
@@ -671,7 +667,7 @@ export class TodoService {
 
 
 
-## State management 2/3
+## RxJS - State management 2/3
 
 - Same example but using a `ReplaySubject` instead of a `BehaviorSubject`
 
@@ -703,7 +699,7 @@ Notes :
 
 
 
-## State management 3/3
+## RxJS - State management 3/3
 
 - Determine the appropriate place to trigger data fetching
 
@@ -728,7 +724,7 @@ todoService.todos$.pipe(map(({ length }) => length)).subscribe((length) => conso
 
 
 
-## Conclusion
+## RxJS - Conclusion
 
 - Now you know the main concepts of RxJS:
   - `Observable` and `Observer`

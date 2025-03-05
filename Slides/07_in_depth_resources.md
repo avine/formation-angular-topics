@@ -23,7 +23,7 @@
 - **PrimeNG:** https://primeng.org/
 - **Transloco:** https://jsverse.gitbook.io/transloco
 - **NgRx signals:** https://ngrx.io/guide/signals
-- **Resource:** https://angular.dev/api/core/resource
+- **Resource:** https://angular.dev/guide/signals/resource
 - **RxResource:** https://angular.dev/api/core/rxjs-interop/rxResource
 - **HttpResource:** https://angular.dev/api/common/http/httpResource
 - **RxJS:** https://rxjs.dev/

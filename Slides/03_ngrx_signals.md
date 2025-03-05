@@ -8,6 +8,8 @@
 
 <!-- .slide: class="toc" -->
 
+<img src="./resources/ngrx.png" style="float: right; margin: 80px 250px 0 0" />
+
 - [PrimeNG](#/1)
 - [Transloco](#/2)
 - **[NgRx signals](#/3)**
@@ -64,11 +66,8 @@ export const UserPostsStore = signalStore(
 import { computed } from '@angular/core';
 import { signalStore, withComputed } from '@ngrx/signals';
 import { Post } from '../shared/api/api.types';
-// ...
 
 export const UserPostsStore = signalStore(
-  // ...
-
   withComputed(({ posts, selectedPostId }) => ({
     selectedPost: computed<Post | undefined>(() => {
       const postId = selectedPostId();
@@ -84,17 +83,16 @@ export const UserPostsStore = signalStore(
 
 - Methods can be added to the store using the `withMethods` feature
 
+- Use `patchState` function to update the store state
+
 ```ts
 import { inject } from '@angular/core';
 import { patchState, signalStore, withMethods } from '@ngrx/signals';
 import { firstValueFrom } from 'rxjs';
 import { ApiService } from '../shared/api/api.service';
 import { Post } from '../shared/api/api.types';
-// ...
 
 export const UserPostsStore = signalStore(
-  // ...
-
   withMethods((store, apiService = inject(ApiService)) => ({
     async loadPosts(userId: number) {
       const posts = await firstValueFrom(apiService.getUserPosts(userId));
@@ -116,12 +114,9 @@ export const UserPostsStore = signalStore(
 
 ```ts
 import { signalStore } from '@ngrx/signals';
-// ...
 
 export const UserPostsStore = signalStore(
   { providedIn: 'root' },
-
-  // ...
 );
 ```
 

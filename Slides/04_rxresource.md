@@ -8,6 +8,8 @@
 
 <!-- .slide: class="toc" -->
 
+<img src="./resources/angular.png" style="float: right; margin: 80px 250px 0 0; width: 250px" />
+
 - [PrimeNG](#/1)
 - [Transloco](#/2)
 - [NgRx signals](#/3)
@@ -48,7 +50,7 @@ export class UserPostsComponent {
 
 - `RxResource` provides useful properties
   - `value()`: The current value of the Resource, or undefined if there is no current value
-  - `status()`: The current status of the Resource
+  - `status()`: The current status of the Resource (Idle, Error, Loading, Resolved, ...)
   - `reload()`: Instructs the resource to reload
   - `isLoading()`: Whether this resource is loading a new value (or reloading the existing one)
   - `set()`: Convenience wrapper for `value.set`
