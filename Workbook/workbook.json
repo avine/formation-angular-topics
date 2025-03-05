@@ -1,5 +1,6 @@
 [
   "front_page.md",
+  "00_getting_started.md",
   "01_primeng.md",
   "02_transloco.md",
   "03_ngrx_signals.md",
