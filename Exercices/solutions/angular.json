@@ -20,7 +20,6 @@
             "outputPath": "dist/00_vanilla",
             "index": "projects/00_vanilla/src/index.html",
             "browser": "projects/00_vanilla/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/00_vanilla/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -97,7 +96,6 @@
             "outputPath": "dist/01_primeng",
             "index": "projects/01_primeng/src/index.html",
             "browser": "projects/01_primeng/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/01_primeng/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -174,7 +172,6 @@
             "outputPath": "dist/02_transloco",
             "index": "projects/02_transloco/src/index.html",
             "browser": "projects/02_transloco/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/02_transloco/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -251,7 +248,6 @@
             "outputPath": "dist/03_ngrx",
             "index": "projects/03_ngrx/src/index.html",
             "browser": "projects/03_ngrx/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/03_ngrx/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -328,7 +324,6 @@
             "outputPath": "dist/04_rxresource",
             "index": "projects/04_rxresource/src/index.html",
             "browser": "projects/04_rxresource/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/04_rxresource/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -405,7 +400,6 @@
             "outputPath": "dist/05_httpresource",
             "index": "projects/05_httpresource/src/index.html",
             "browser": "projects/05_httpresource/src/main.ts",
-            "polyfills": ["zone.js"],
             "tsConfig": "projects/05_httpresource/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
