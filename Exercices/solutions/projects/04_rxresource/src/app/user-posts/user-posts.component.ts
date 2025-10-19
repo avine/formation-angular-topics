@@ -20,8 +20,8 @@ export class UserPostsComponent {
   user = input.required<User>();
 
   posts = rxResource({
-    request: () => this.user().id,
-    loader: ({ request: userId }) => this.apiService.getUserPosts(userId),
+    params: () => this.user().id,
+    stream: ({ params: userId }) => this.apiService.getUserPosts(userId),
   });
 
   selectedPostId = signal<number | undefined>(undefined);

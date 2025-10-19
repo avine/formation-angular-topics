@@ -6,5 +6,5 @@ import { User } from './api/api.types';
   providedIn: 'root',
 })
 export class UsersService {
-  users = httpResource<User[]>('https://jsonplaceholder.typicode.com/users');
+  users = httpResource<User[]>(() => 'https://jsonplaceholder.typicode.com/users');
 }

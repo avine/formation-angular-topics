@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { inject, Injectable, RendererFactory2, signal } from '@angular/core';
+import { DOCUMENT, inject, Injectable, RendererFactory2, signal } from '@angular/core';
 import { DARK_MODE_CSS_CLASS } from './theme.constants';
 import { Theme } from './theme.types';
 

@@ -8,5 +8,5 @@ import { ApiService } from './api/api.service';
 export class UsersService {
   private apiService = inject(ApiService);
 
-  users = rxResource({ loader: () => this.apiService.getUsers() });
+  users = rxResource({ stream: () => this.apiService.getUsers() });
 }
